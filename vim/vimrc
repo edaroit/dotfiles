@@ -1,0 +1,35 @@
+syntax on
+
+set number                     
+set relativenumber            
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set ruler
+set scrolloff=4
+
+nmap 0 ^
+
+let mapleader = "\<Space>"
+
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<cr>
+nmap <leader>fs :w<cr>
+nmap <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<cr>
+nmap <leader>vi :tabe $MYVIMRC<cr>
+nmap <leader>co ggVG*y
+nmap j gj
+nmap k gk
+
+nmap <leader>mt :!mix test --only wip<cr>
+
+imap jk <esc>
+imap kj <esc>
+imap <C-s> <esc>:w<cr>
+
+autocmd Filetype help nmap <buffer> q :q<cr>
+
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! QA qall
+command! E e
