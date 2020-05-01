@@ -10,6 +10,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'mhinz/vim-mix-format'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -29,6 +30,8 @@ set ruler
 set scrolloff=4
 
 let mapleader = "\<Space>"
+let g:mix_format_on_save = 1
+let g:mix_format_silent_errors = 1
 
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
