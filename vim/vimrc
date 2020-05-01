@@ -19,8 +19,6 @@ set expandtab
 set ruler
 set scrolloff=4
 
-nmap 0 ^
-
 let mapleader = "\<Space>"
 
 nmap <leader>vr :sp $MYVIMRC<cr>
@@ -29,6 +27,7 @@ nmap <leader>fs :w<cr>
 nmap <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<cr>
 nmap <leader>vi :tabe $MYVIMRC<cr>
 nmap <leader>co ggVG*y
+nmap 0 ^
 nmap j gj
 nmap k gk
 
