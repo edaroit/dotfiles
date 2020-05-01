@@ -31,8 +31,6 @@ nmap 0 ^
 nmap j gj
 nmap k gk
 
-nmap <leader>mt :!mix test --only wip<cr>
-
 imap jk <esc>
 imap kj <esc>
 imap <C-s> <esc>:w<cr>
