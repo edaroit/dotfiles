@@ -11,6 +11,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'mhinz/vim-mix-format'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,3 +54,10 @@ command! Q q " Bind :Q to :q
 command! Qall qall
 command! QA qall
 command! E e
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
