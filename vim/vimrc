@@ -13,6 +13,7 @@ Plugin 'elixir-editors/vim-elixir'
 Plugin 'mhinz/vim-mix-format'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
