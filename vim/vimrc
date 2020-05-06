@@ -68,3 +68,7 @@ map <Leader>mt :call VtrSendCommand("mix test")<CR>
 map <Leader>mtf :call VtrSendCommand("mix test --failed")<CR>
 map <Leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
 
+set rtp+=/usr/local/opt/fzf
+
+map <leader>ag :Ag<cr>
+
