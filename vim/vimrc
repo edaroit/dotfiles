@@ -14,6 +14,9 @@ Plugin 'mhinz/vim-mix-format'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,4 +75,22 @@ map <Leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
 set rtp+=/usr/local/opt/fzf
 
 map <leader>ag :Ag<cr>
+
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd FileType markdown set cursorline
+autocmd FileType markdown setlocal spell spelllang=en_us
+autocmd FileType markdown Goyo
+
+let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_folding_disabled = 1
+
+map <leader>md :execute "!pandoc " . expand('%t')  "-o ~/output.pdf"<cr> :!open -a Firefox\ Developer\ Edition ~/output.pdf<cr><cr>
 
