@@ -86,4 +86,3 @@ command! QA qall
 command! E e
 
 set rtp+=/usr/local/opt/fzf
-
