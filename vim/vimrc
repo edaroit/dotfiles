@@ -14,16 +14,11 @@ Plugin 'mhinz/vim-mix-format'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/goyo.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Make CtrlP use ag for listing the files. Way faster and no useless files.
-let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
-let g:ctrlp_use_caching = 0
 
 syntax on
 
@@ -38,6 +33,19 @@ set scrolloff=4
 let mapleader = "\<Space>"
 let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
+let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_folding_disabled = 1
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
 
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
@@ -54,16 +62,6 @@ imap jk <esc>
 imap kj <esc>
 imap <C-s> <esc>:w<cr>
 
-autocmd Filetype help nmap <buffer> q :q<cr>
-
-command! Q q " Bind :Q to :q
-command! Qall qall
-command! QA qall
-command! E e
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
@@ -71,26 +69,21 @@ nnoremap <leader>= :wincmd =<cr>
 map <Leader>mt :call VtrSendCommand("mix test")<CR>
 map <Leader>mtf :call VtrSendCommand("mix test --failed")<CR>
 map <Leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
-
-set rtp+=/usr/local/opt/fzf
-
 map <leader>ag :Ag<cr>
+map <leader>md :execute "!pandoc " . expand('%t')  "-o ~/output.pdf"<cr> :!open -a Firefox\ Developer\ Edition ~/output.pdf<cr><cr>
+map <leader>to :vnew ~/todo.md<cr>
 
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd FileType markdown set cursorline
 autocmd FileType markdown setlocal spell spelllang=en_us
-autocmd FileType markdown Goyo
+autocmd Filetype help nmap <buffer> q :q<cr>
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
-let g:vim_markdown_conceal = 2
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_math = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_edit_url_in = 'tab'
-let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_folding_disabled = 1
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! QA qall
+command! E e
 
-map <leader>md :execute "!pandoc " . expand('%t')  "-o ~/output.pdf"<cr> :!open -a Firefox\ Developer\ Edition ~/output.pdf<cr><cr>
+set rtp+=/usr/local/opt/fzf
 
