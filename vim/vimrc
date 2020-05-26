@@ -54,7 +54,7 @@ nmap <leader>pi :PluginInstall<cr>
 nmap <leader>fs :w<cr>
 nmap <leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<cr>
 nmap <leader>vi :tabe $MYVIMRC<cr>
-nmap <leader>co ggVG*y
+nmap <leader>co gg"+yG
 nmap 0 ^
 nmap j gj
 nmap k gk
