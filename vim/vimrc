@@ -29,6 +29,7 @@ set shiftwidth=2
 set expandtab
 set ruler
 set scrolloff=4
+set iskeyword-=_
 
 let mapleader = "\<Space>"
 let g:mix_format_on_save = 1
