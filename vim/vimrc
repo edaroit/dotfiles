@@ -70,6 +70,7 @@ nnoremap <leader>= :wincmd =<cr>
 map <Leader>mt :call VtrSendCommand("mix test")<CR>
 map <Leader>mtf :call VtrSendCommand("mix test --failed")<CR>
 map <Leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
+map <Leader>mc :call VtrSendCommand("mix credo")<CR>
 map <leader>ag :Ag<cr>
 map <leader>md :execute "!pandoc " . expand('%t')  "-o ~/output.pdf"<cr> :!open -a Firefox\ Developer\ Edition ~/output.pdf<cr><cr>
 map <leader>to :vnew ~/todo.md<cr>
