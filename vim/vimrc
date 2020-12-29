@@ -17,6 +17,12 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+Plugin 'jceb/vim-orgmode'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'mattn/calendar-vim'
+Plugin 'vim-scripts/utl.vim'
+Plugin 'tpope/vim-speeddating'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -33,6 +39,7 @@ set iskeyword-=_
 set splitright
 
 let mapleader = "\<Space>"
+let maplocalleader = "\<Space>"
 let g:mix_format_on_save = 1
 let g:mix_format_silent_errors = 1
 let g:vim_markdown_conceal = 2
