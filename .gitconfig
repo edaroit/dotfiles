@@ -1,0 +1,37 @@
+[user]
+  name = Eliseu Daroit
+  email = eliseu.daroit@gmail.com
+  signingkey = 7D3F89A200DE4F1B
+[alias]
+  dc = diff --cached
+  pf = push --force-with-lease
+  st = status
+  co = checkout
+  cb = "!f() { git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
+  cs = "!f() { \
+            TASK_ID=$(cut -d'/' -f1 <<< $(git rev-parse --abbrev-ref HEAD)); \
+            EDITOR=vim; \
+            COMMIT_MESSAGE="[${TASK_ID}]"; \
+            git commit -e -m "\"${COMMIT_MESSAGE}\""; \
+        }; f"
+[core]
+        pager = diff-so-fancy | less --tabs=4 -RFX
+        excludesfile = /Users/edaroit/.gitignore_global
+[color]
+        ui = true
+[color "diff-highlight"]
+        oldNormal = red bold
+        oldHighlight = red bold 52
+        newNormal = green bold
+        newHighlight = green bold 22
+[color "diff"]
+        meta = 11
+        frag = magenta bold
+        commit = yellow bold
+        old = red bold
+        new = green bold
+        whitespace = red reverse
+[commit]
+        gpgsign = true
+[pull]
+        ff = only
