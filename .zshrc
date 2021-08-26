@@ -12,7 +12,6 @@ export EDITOR=vim
 ZSH_THEME="spaceship"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
 
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
