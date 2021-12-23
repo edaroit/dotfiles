@@ -21,10 +21,10 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 
 " ruby
-map <Leader>rt :call VtrSendCommand("for file in test/*_test.rb; do ruby -Itest $file; done")<CR>
+map <leader>rt :call VtrSendCommand("for file in test/*_test.rb; do ruby -Itest $file; done")<CR>
 
 " elixir
-map <Leader>mt :call VtrSendCommand("mix test")<CR>
-map <Leader>mtf :call VtrSendCommand("mix test --failed")<CR>
-map <Leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
-map <Leader>mc :call VtrSendCommand("mix credo")<CR>
+map <leader>mt :call VtrSendCommand("mix test")<CR>
+map <leader>mtf :call VtrSendCommand("mix test --failed")<CR>
+map <leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
+map <leader>mc :call VtrSendCommand("mix credo")<CR>
