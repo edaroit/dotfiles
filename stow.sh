@@ -8,3 +8,6 @@ stow zsh
 
 # install tmux
 stow tmux
+
+# install git
+stow git
