@@ -16,3 +16,5 @@ alias uuidgen="uuidgen | tr '[:upper:]' '[:lower:]'"
 
 # elixir
 alias iex='iex --erl "-kernel shell_history enabled"'
+
+. /usr/local/opt/asdf/libexec/asdf.sh
