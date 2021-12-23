@@ -16,5 +16,3 @@ alias uuidgen="uuidgen | tr '[:upper:]' '[:lower:]'"
 
 # elixir
 alias iex='iex --erl "-kernel shell_history enabled"'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
