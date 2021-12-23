@@ -23,9 +23,6 @@ set iskeyword-=_
 " turn off paste mode when leaving insert
 autocmd InsertLeave * set nopaste
 
-" will search for runtime files
-set runtimepath+=/usr/local/opt/fzf
-
 runtime ./plug.vim
 runtime ./macos.vim
 runtime ./maps.vim
