@@ -5,7 +5,9 @@ let maplocalleader = "\<Space>"
 
 nmap <leader>vi :tabe $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
+
 nmap <leader>pi :PlugInstall<cr>
+nmap <leader>pc :PlugClean<cr>
 
 nmap <leader>fs :w<cr>
 nmap 0 ^
@@ -26,6 +28,3 @@ map <Leader>mt :call VtrSendCommand("mix test")<CR>
 map <Leader>mtf :call VtrSendCommand("mix test --failed")<CR>
 map <Leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
 map <Leader>mc :call VtrSendCommand("mix credo")<CR>
-
-" ag
-map <leader>ag :Ag<cr>
