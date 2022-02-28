@@ -1,4 +1,4 @@
-export ZSH="/Users/edaroit/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="awesomepanda"
 
