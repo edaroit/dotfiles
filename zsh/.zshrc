@@ -7,6 +7,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
+export GPG_TTY=$(tty)
 
 alias reload="source ~/.zshrc"
 
