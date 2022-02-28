@@ -15,11 +15,31 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
     vim.api.nvim_command [[augroup END]]
   end
-
-  require('completion').on_attach(client, bufnr)
 end
 
-nvim_lsp.solargraph.setup{
-  on_attach = on_attach
-}
+local configs = require 'lspconfig.configs'
+if not configs.rubocop_lsp then
+ configs.rubocop_lsp = {
+   default_config = {
+     cmd = {'bundle', 'exec', 'rubocop-lsp'};
+     filetypes = {'ruby'};
+     root_dir = function(fname)
+       return nvim_lsp.util.find_git_ancestor(fname)
+     end;
+     settings = {};
+   };
+ }
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { 'rubocop_lsp' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
 EOF
