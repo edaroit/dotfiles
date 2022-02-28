@@ -36,6 +36,3 @@ nmap <leader>mc :call VtrSendCommand("mix credo")<CR>
 
 " vim-tmux-runner
 nmap <leader>kr :VtrKillRunner<cr>
-
-" git
-nmap <leader>gd :VtrOpenRunner {'orientation': 'h', 'percentage': 40}<cr>:VtrSendCommandToRunner git diff<cr>:VtrFocusRunner<cr>
