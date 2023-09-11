@@ -29,10 +29,10 @@ nnoremap <leader>= :wincmd =<cr>
 nmap <leader>rt :call VtrSendCommand("for file in test/*_test.rb; do ruby -Itest $file; done")<CR>
 
 " elixir
-nmap <leader>mt :call VtrSendCommand("mix test")<CR>
-nmap <leader>mtf :call VtrSendCommand("mix test --failed")<CR>
-nmap <leader>mtw :call VtrSendCommand("mix test --only wip")<CR>
-nmap <leader>mc :call VtrSendCommand("mix credo")<CR>
+nmap <leader>mf :VtrOpenRunner {'orientation': 'h', 'percentage': 40}<cr>:VtrSendCommandToRunner mix format<cr>
+nmap <leader>mt :VtrOpenRunner {'orientation': 'h', 'percentage': 40}<cr>:VtrSendCommandToRunner mix test<cr>
+nmap <leader>mtf :VtrOpenRunner {'orientation': 'h', 'percentage': 40}<cr>:VtrSendCommandToRunner mix test --failed<cr>
+nmap <leader>mtw :VtrOpenRunner {'orientation': 'h', 'percentage': 40}<cr>:VtrSendCommandToRunner mix test --only wip<cr>
 
 " vim-tmux-runner
 nmap <leader>kr :VtrKillRunner<cr>

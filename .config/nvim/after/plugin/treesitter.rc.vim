@@ -1,13 +1,13 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- list of languages
-ensure_installed = { "elixir", "ruby", "rust" },
+ensure_installed = { "ruby", "rust" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- List of parsers to ignore installing
-  ignore_install = { "javascript" },
+  ignore_install = { "elixir", "javascript" },
 
   highlight = {
     -- `false` will disable the whole extension

@@ -42,4 +42,13 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+
+nvim_lsp.solargraph.setup{
+  on_attach = on_attach
+}
+
+nvim_lsp.elixirls.setup{
+  cmd = { "/Users/edaroit/.bin/elixir-ls/language_server.sh" }
+}
 EOF
