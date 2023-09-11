@@ -14,7 +14,10 @@ alias reload="source ~/.zshrc"
 alias vim="nvim"
 alias map="xargs -n1"
 alias uuidgen="uuidgen | tr '[:upper:]' '[:lower:]'"
-alias tig="git log --oneline main..$(git branch --show-current)"
+
+tig() {
+  git log --oneline origin/main..$(git branch --show-current)
+}
 
 # elixir
 alias iex='iex --erl "-kernel shell_history enabled"'
