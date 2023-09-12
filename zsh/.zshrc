@@ -19,6 +19,10 @@ tig() {
   git log --oneline origin/main..$(git branch --show-current)
 }
 
+rebase() {
+  git rebase -i --keep-base origin/main
+}
+
 # elixir
 alias iex='iex --erl "-kernel shell_history enabled"'
 
